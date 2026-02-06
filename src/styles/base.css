@@ -1,0 +1,19 @@
+:root {
+    --black: #0a0908;
+    --alice-blue: #d9f0ff;
+    --dusk-blue: #445e93;
+}
+
+html,
+body {
+    font-family: "Italianno", cursive;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Chelsea Market", system-ui;
+}
