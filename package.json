@@ -1,14 +1,22 @@
 {
-  "name": "spacethink",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
-  },
-  "devDependencies": {
-    "vite": "^7.2.4"
-  }
+    "name": "spacethink",
+    "private": true,
+    "version": "0.0.0",
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build",
+        "lint": "eslint ./src/**/*.js ./src/**/*.css ./src/**/*.json",
+        "format": "prettier --ignore-path ./.gitignore --write \"./**/*.{html,json,js,ts,css}\"",
+        "preview": "vite preview"
+    },
+    "devDependencies": {
+        "@eslint/css": "^0.14.1",
+        "@eslint/js": "^9.39.2",
+        "@eslint/json": "^1.0.0",
+        "eslint": "^9.39.2",
+        "globals": "^17.3.0",
+        "prettier": "3.8.1",
+        "vite": "^7.2.4"
+    }
 }
