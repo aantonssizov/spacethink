@@ -1,12 +1,11 @@
 :root {
-    --black: #0a0908;
     --alice-blue: #d9f0ff;
-    --dusk-blue: #445e93;
+    --cold-steel: #404A61;
 }
 
 html,
 body {
-    font-family: "Italianno", cursive;
+    font-family: "Chelsea Market", system-ui;
 }
 
 h1,
@@ -15,5 +14,38 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: "Chelsea Market", system-ui;
+    font-family: "Italianno", cursive;
+}
+
+.wrapper {
+    max-width: 1024px;
+    margin: 0 auto;
+}
+
+header,
+footer {
+    background-color: var(--cold-steel);
+    color: var(--alice-blue);
+    padding: 8px;
+}
+
+header .wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    span.title {
+        font-family: "Italianno", system-ui;
+        font-size: 2.5em;
+    }
+}
+
+footer .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    p a {
+        color: white;
+    }
 }
