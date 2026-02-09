@@ -1,11 +1,11 @@
 :root {
     --alice-blue: #d9f0ff;
-    --cold-steel: #404A61;
+    --cold-steel: #404a61;
 }
 
 html,
 body {
-    font-family: "Chelsea Market", system-ui;
+    font-family: 'Chelsea Market', system-ui;
 }
 
 h1,
@@ -14,7 +14,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: "Italianno", cursive;
+    font-family: 'Italianno', cursive;
 }
 
 .wrapper {
@@ -34,8 +34,16 @@ header .wrapper {
     justify-content: center;
     align-items: center;
 
+    img {
+        animation-name: swinging;
+        animation-timing-function: ease-out;
+        animation-iteration-count: infinite;
+        animation-duration: 4s;
+        animation-direction: alternate;
+    }
+
     span.title {
-        font-family: "Italianno", system-ui;
+        font-family: 'Italianno', system-ui;
         font-size: 2.5em;
     }
 }
@@ -47,5 +55,15 @@ footer .wrapper {
 
     p a {
         color: white;
+    }
+}
+
+@keyframes swinging {
+    0% {
+        transform: rotate(15deg);
+    }
+
+    100% {
+        transform: rotate(-15deg);
     }
 }

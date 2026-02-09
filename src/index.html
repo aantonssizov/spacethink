@@ -1,34 +1,57 @@
 <!doctype html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="icon" type="image/svg+xml" href="images/favicon.ico" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>SpaceThink - Home</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Chelsea+Market&family=Italianno&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="styles/modern-normalize.css" />
+        <link rel="stylesheet" href="styles/base.css" />
+        <link rel="stylesheet" href="styles/index.css" />
+    </head>
 
-<head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="images/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SpaceThink - Home</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Chelsea+Market&family=Italianno&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles/modern-normalize.css">
-    <link rel="stylesheet" href="styles/base.css">
-</head>
-
-<body>
-    <header>
-        <div class="wrapper">
-            <img src="images/logo.svg" alt="SpaceThink Logo" width="96" height="96">
-            <span class="title">Space, What Do You Think?</span>
-        </div>
-    </header>
-    <main>
-        <div class="wrapper"></div>
-    </main>
-    <footer>
-        <div class="wrapper">
-            <p>WDD 330 Final Project &copy; 2026</p>
-            <p>Send your <a href="#">Feedback</a>!</p>
-        </div>
-    </footer>
-</body>
-
+    <body>
+        <header>
+            <div class="wrapper">
+                <img
+                    src="images/logo.svg"
+                    alt="SpaceThink Logo"
+                    width="96"
+                    height="96"
+                />
+                <span class="title">Space, What Do You Think?</span>
+            </div>
+        </header>
+        <main>
+            <div class="wrapper">
+                <h1>
+                    You don't know who else to ask, then ask Space itself about
+                    it!
+                </h1>
+                <form action="result.html">
+                    <label for="prompt">Prompt:</label>
+                    <textarea
+                        name="prompt"
+                        id="prompt"
+                        placeholder="Type in your prompt"
+                    ></textarea>
+                    <button type="submit">
+                        See what does space think on this!
+                    </button>
+                </form>
+            </div>
+        </main>
+        <footer>
+            <div class="wrapper">
+                <p>WDD 330 Final Project &copy; 2026</p>
+                <p>Send your <a href="#">Feedback</a>!</p>
+            </div>
+        </footer>
+    </body>
 </html>

@@ -1,0 +1,21 @@
+main .wrapper {
+    padding: 8px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    textarea,
+    button {
+        padding: 8px;
+        font-family: 'Chelsea Market', system-ui;
+    }
+
+    button {
+        border-color: var(--cold-steel);
+        border-radius: 3px;
+        cursor: pointer;
+    }
+}

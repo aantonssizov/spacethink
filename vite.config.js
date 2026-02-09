@@ -1,19 +1,19 @@
-import { resolve, dirname } from "path";
-import { fileURLToPath } from "url";
-import { defineConfig } from 'vite';
+import { resolve, dirname } from 'path'
+import { fileURLToPath } from 'url'
+import { defineConfig } from 'vite'
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = dirname(__filename)
 
 export default defineConfig({
-    root: "src/",
+    root: 'src/',
 
     build: {
-        outDir: "../dist",
+        outDir: '../dist',
         rollupOptions: {
             input: {
-                main: resolve(__dirname, "src/index.html"),
+                main: resolve(__dirname, 'src/index.html'),
             },
         },
-    }
+    },
 })
