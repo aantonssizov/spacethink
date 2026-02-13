@@ -4,15 +4,21 @@
         <meta charset="UTF-8" />
         <link rel="icon" type="image/svg+xml" href="images/favicon.ico" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            name="description"
+            content="Result page where you will see what space does think"
+        />
+        <meta name="author" content="Anton Syzov" />
         <title>SpaceThink - Result</title>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
-            href="https://fonts.googleapis.com/css2?family=Chelsea+Market&family=Italianno&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Chelsea+Market&family=Miltonian&display=swap"
             rel="stylesheet"
         />
         <link rel="stylesheet" href="styles/modern-normalize.css" />
         <link rel="stylesheet" href="styles/base.css" />
+        <link rel="stylesheet" href="styles/result.css" />
         <script type="module" src="scripts/result.js"></script>
     </head>
 
@@ -25,17 +31,24 @@
                     width="96"
                     height="96"
                 />
-                <span class="title">Space, What Do You Think?</span>
+                <span class="title"
+                    ><a href="index.html">Space, What Do You Think?</a></span
+                >
             </div>
         </header>
         <main>
             <div class="wrapper">
                 <h2>
                     Space thinks that the answer lies on
-                    <span class="body-name"></span>. Go there to find the real
-                    answer!
+                    <span class="body-name"
+                        >(a planet is currently loading)</span
+                    >. Go there to find the real answer!
                 </h2>
-                <div class="body-details"></div>
+                <div class="body-details">
+                    <p><b>Name:</b></p>
+                    <p><b>Type:</b></p>
+                    <p><b>Around Planet:</b></p>
+                </div>
                 <h3>Most likely the answer would be the following:</h3>
                 <div class="quote"></div>
             </div>

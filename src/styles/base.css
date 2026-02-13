@@ -14,7 +14,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: 'Italianno', cursive;
+    font-family: 'Miltonian', serif;
 }
 
 .wrapper {
@@ -43,8 +43,14 @@ header .wrapper {
     }
 
     span.title {
-        font-family: 'Italianno', system-ui;
+        font-family: 'Miltonian', serif;
         font-size: 2.5em;
+
+        a {
+            text-decoration: none;
+            cursor: pointer;
+            color: inherit;
+        }
     }
 }
 

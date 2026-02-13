@@ -1,35 +1,43 @@
-const leSystemeBaseURL = import.meta.env.VITE_LE_SYSTEME;
-const leSystemeKey = import.meta.env.VITE_LE_SYSTEME_KEY;
-const supernaturalBaseURL = import.meta.env.VITE_SUPERNATURALE;
+const leSystemeBaseURL = import.meta.env.VITE_LE_SYSTEME
+const leSystemeKey = import.meta.env.VITE_LE_SYSTEME_KEY
+const supernaturalBaseURL = import.meta.env.VITE_SUPERNATURALE
 
-const reverseProxyURL = import.meta.env.VITE_REVERSE_PROXY;
+const reverseProxyURL = import.meta.env.VITE_REVERSE_PROXY
 
-const getReverseProxiedURL = (url) => `${reverseProxyURL}/${url}`;
+const getReverseProxiedURL = (url) => `${reverseProxyURL}/${url}`
 
 async function getBodiesIds() {
-    const request = await fetch(getReverseProxiedURL(`${leSystemeBaseURL}bodies?data=id`), {
-        headers: {
-            authorization: `Bearer ${leSystemeKey}`,
-        },
-    })
+    const request = await fetch(
+        getReverseProxiedURL(`${leSystemeBaseURL}bodies?data=id`),
+        {
+            headers: {
+                authorization: `Bearer ${leSystemeKey}`,
+            },
+        }
+    )
     const body = await request.json()
 
     return body
 }
 
 async function getBody(id) {
-    const request = await fetch(getReverseProxiedURL(`${leSystemeBaseURL}bodies/${id}`), {
-        headers: {
-            authorization: `Bearer ${leSystemeKey}`,
-        },
-    })
+    const request = await fetch(
+        getReverseProxiedURL(`${leSystemeBaseURL}bodies/${id}`),
+        {
+            headers: {
+                authorization: `Bearer ${leSystemeKey}`,
+            },
+        }
+    )
     const body = await request.json()
 
     return body
 }
 
 async function getRandomQuote() {
-    const request = await fetch(getReverseProxiedURL(`${supernaturalBaseURL}/quotes/random`))
+    const request = await fetch(
+        getReverseProxiedURL(`${supernaturalBaseURL}/quotes/random`)
+    )
     const body = await request.json()
 
     return body
@@ -46,10 +54,10 @@ function renderBody(body) {
     bodyName.setHTMLUnsafe(`<b>Name: </b>${body.englishName}`)
     bodyType.setHTMLUnsafe(`<b>Type: </b>${body.bodyType}`)
     aroundPlanet.setHTMLUnsafe(
-        `<b>Around Planet: </b>${body.aroundPlanet.planet ?? 'None'}`
+        `<b>Around Planet: </b>${body.aroundPlanet?.planet ?? 'None'}`
     )
 
-    bodyDetails.append(bodyName, bodyType, aroundPlanet)
+    bodyDetails.replaceChildren(bodyName, bodyType, aroundPlanet)
 }
 
 function renderQuote(quote) {
