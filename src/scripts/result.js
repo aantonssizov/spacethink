@@ -1,10 +1,15 @@
-const leSystemeBaseURL = 'https://api.le-systeme-solaire.net/rest/'
-const supernaturalBaseURL = 'https://supernatural-api.onrender.com'
+const leSystemeBaseURL = import.meta.env.VITE_LE_SYSTEME;
+const leSystemeKey = import.meta.env.VITE_LE_SYSTEME_KEY;
+const supernaturalBaseURL = import.meta.env.VITE_SUPERNATURALE;
+
+const reverseProxyURL = import.meta.env.VITE_REVERSE_PROXY;
+
+const getReverseProxiedURL = (url) => `${reverseProxyURL}/${url}`;
 
 async function getBodiesIds() {
-    const request = await fetch(`${leSystemeBaseURL}bodies?data=id`, {
+    const request = await fetch(getReverseProxiedURL(`${leSystemeBaseURL}bodies?data=id`), {
         headers: {
-            authorization: 'Bearer b4210fdd-eb11-4f71-b1b7-9382175559c0',
+            authorization: `Bearer ${leSystemeKey}`,
         },
     })
     const body = await request.json()
@@ -13,9 +18,9 @@ async function getBodiesIds() {
 }
 
 async function getBody(id) {
-    const request = await fetch(`${leSystemeBaseURL}bodies/${id}`, {
+    const request = await fetch(getReverseProxiedURL(`${leSystemeBaseURL}bodies/${id}`), {
         headers: {
-            authorization: 'Bearer b4210fdd-eb11-4f71-b1b7-9382175559c0',
+            authorization: `Bearer ${leSystemeKey}`,
         },
     })
     const body = await request.json()
@@ -24,7 +29,7 @@ async function getBody(id) {
 }
 
 async function getRandomQuote() {
-    const request = await fetch(`${supernaturalBaseURL}/quotes/random`)
+    const request = await fetch(getReverseProxiedURL(`${supernaturalBaseURL}/quotes/random`))
     const body = await request.json()
 
     return body
