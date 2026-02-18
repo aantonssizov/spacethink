@@ -13,6 +13,10 @@ form {
         font-family: 'Chelsea Market', system-ui;
     }
 
+    textarea:focus {
+        font-size: 1.2em;
+    }
+
     button {
         border-color: var(--cold-steel);
         border-radius: 3px;
