@@ -1,7 +1,8 @@
+import { BODIES_KEY, setBodyCount } from './bodies_count'
+
 const leSystemeBaseURL = import.meta.env.VITE_LE_SYSTEME
 const leSystemeKey = import.meta.env.VITE_LE_SYSTEME_KEY
 const supernaturalBaseURL = import.meta.env.VITE_SUPERNATURALE
-
 const reverseProxyURL = import.meta.env.VITE_REVERSE_PROXY
 
 const getReverseProxiedURL = (url) => `${reverseProxyURL}/${url}`
@@ -76,6 +77,15 @@ function renderQuote(quote) {
     renderLine(0)
 }
 
+function saveBody(body) {
+    const bodies = JSON.parse(localStorage.getItem(BODIES_KEY)) ?? []
+
+    if (bodies.includes(body.englishName)) return
+
+    bodies.push(body.englishName)
+    localStorage.setItem(BODIES_KEY, JSON.stringify(bodies))
+}
+
 const paramsString = location.search
 const searchParams = new URLSearchParams(paramsString)
 const promptParam = searchParams.get('prompt')
@@ -91,6 +101,9 @@ const id = bodiesIds[index].id
 
 const body = await getBody(id)
 const quote = await getRandomQuote()
+
+saveBody(body)
+setBodyCount()
 
 renderBody(body)
 renderQuote(quote)
